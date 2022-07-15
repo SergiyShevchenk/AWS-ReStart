@@ -1,0 +1,44 @@
+
+
+labsuser-4.pem
+
+chmod 400 ~/Downloads/labsuser-4.pem 
+
+ssh -i ~/Downloads/labsuser-4.pem  ec2-user@34.212.146.21
+
+curl 169.254.169.254
+
+curl 169.254.169.254/2021-07-15/meta-data
+
+curl 169.254.169.254/2021-07-15/meta-data/ami-id
+
+sudo yum -y upgrade
+
+sudo yum history info 3
+ yum -y history undo 3
+
+python3 --version
+pip3 --version
+
+curl 169.254.169.254/latest/meta-data/placement/availability-zone
+
+aws ec2 describe-instance-attribute --instance-id i-01fd2f0db15bbd91e --attribute instanceType
+aws ec2 describe-instances | grep InstanceType
+aws ec2 describe-instances --instance-id i-01fd2f0db15bbd91e | grep InstanceType
+
+aws ec2 describe-subnets --query Subnets[].SubnetId
+
+
+aws ec2 run-instances --image-id ami-0d08ef957f0e4722b --subnet-id subnet-04ed308cee5ea8a85  --instance-type t3.micro 
+
+aws ec2 describe-instances | grep InstanceId
+
+curl 169.254.169.254/2021-07-15/meta-data/instance-id
+aws ec2 describe-instances | grep InstanceId | grep i-01fd2f0db15bbd91e
+
+aws ec2 describe-instances --filters Name=tag:Name,Values="Command Host" --output json | grep InstanceId
+aws ec2 describe-instances  --output json | grep InstanceId
+
+i-06a465670fd8c59ad
+
+
